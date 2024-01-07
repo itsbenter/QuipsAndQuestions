@@ -1,0 +1,117 @@
+{
+	"$schema": "https://smapi.io/schemas/content-patcher.json",
+	"Changes": [
+		{
+			"Action": "EditData",
+			"Target": "spacechase0.SpaceCore/Questions",
+			"TargetField": [
+				"Shane"
+			],
+			"Entries": {
+				"{{ModID}}_Shane.JojaMart00": {
+					"ID": "{{ModID}}_Shane.JojaMart00",
+					"Condition": "PLAYER_LOCATION Current JojaMart",
+					"Weight": 1,
+					"QuestionText": "{{i18n:Shane.JojaMart00_Question}}", //How do you like your job?
+					"AnswerText": "{{Shane.JojaMart00_Answer}}",
+					"CanRepeatQuestion": true,
+					"FriendshipModifier": "0",
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "spacechase0.SpaceCore/Questions",
+			"TargetField": [
+				"Sam"
+			],
+			"Entries": {
+				"{{ModID}}_Sam.Band00": {
+					"ID": "{{ModID}}_Sam.Band00",
+					"Condition": "PLAYER_HAS_SEEN_EVENT Current 4081148", //Event where Sam's band performs
+					"Weight": 1,
+					"QuestionText": "{{i18n:Sam.Band00_Question}}", //How do you feel about your band performance?
+					"AnswerText": "{{i18n:Sam.Band00_Answer}}", //Well, it was our first and there is a lot to learn. But it makes me happy you're there @! $1
+					"CanRepeatQuestion": false,
+					"FriendshipModifier": 15
+				},
+				"{{ModID}}_Sam.Band01": {
+					"ID": "{{ModID}}_Sam.Band01",
+					"Condition": "PLAYER_HAS_SEEN_EVENT Current 4081148", //Event where Sam's band performs
+					"Weight": 1,
+					"QuestionText": "{{i18n:Sam.Band01_Question}", //Are you going to have concert soon?
+					"AnswerText": "{{Sam.Band01_Answer}}#$action AddConversationTopic {{ModId}}_Sam.Band01_Recent 3",
+					"CanRepeatQuestion": true,
+					"FriendshipModifier": "0"
+				},
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "spacechase0.SpaceCore/Questions",
+			"TargetField": [
+				"Gus"
+			],
+			"Entries": {
+				"{{ModID}}_Gus.Saloon00": {
+					"ID": "{{ModID}}_Gus.Saloon00",
+					"Condition": "PLAYER_HAS_SEEN_EVENT Current 96", //Event where Gus express concern over Saloon finance
+					"Weight": 1,
+					"QuestionText": "{{i18n:Gus.Saloon00_Question}}", //Is the saloon doing well?
+					"AnswerText": "{{Gus.Saloon00_Answer}}#$action AddConversationTopic {{ModId}}_Gus.Saloon00_Recent 3",
+					"CanRepeatQuestion": true,
+					"FriendshipModifier": 0
+				},
+				"{{ModID}}_Gus.Bertending00": {
+					"ID": "{{ModID}}_Gus.Bertending00",
+					"Condition": "PLAYER_LOCATION Current Saloon", //Gus tending the bar
+					"Weight": 1,
+					"QuestionText": "{{i18n:Gus.Bertending00_Question}}", //Can I have a free drink?
+					"AnswerText": "{{Gus.Bertending00_Answer}}#$action AddConversationTopic {{ModId}}_Gus.Bertending00_AskedToday 0#$action AddConversationTopic {{ModId}}Gus.Bertending00_Recent 3",
+					"CanRepeatQuestion": true,
+					"FriendshipModifier": 0
+				},
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "spacechase0.SpaceCore/Questions",
+			"TargetField": [
+				"Emily"
+			],
+			"Entries": {
+				"{{ModID}}_Emily.Bertending00": {
+					"ID": "{{ModID}}_Emily.Bertending00",
+					"Condition": "PLAYER_LOCATION Current Saloon", //Emily tending the bar
+					"Weight": 1,
+					"QuestionText": "{{i18n:Emily.Bertending00_Question}}", //Can I have a free drink?
+					"AnswerText": "{{Emily.Bertending00_Answer}}#$action AddConversationTopic {{ModId}}_Emily.Bertending00_AskedToday 0#$action AddConversationTopic {{ModId}}_Emily.Bertending00_Recent 3",
+					"CanRepeatQuestion": true,
+					"FriendshipModifier": 0
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "spacechase0.SpaceCore/Questions",
+			"TargetField": [
+				"Alex"
+			],
+			"When": {
+				"LocationName": "Saloon",
+				"HasConversationTopic |Contains={{ModID}}_Emily.Bertending01_GivenFreeDrink": true
+			},
+			"Update": "OnLocationChange",
+			"Entries": {
+				"{{ModID}}_Emily.Bertending01": {
+					"ID": "{{ModID}}_Emily.Bertending01",
+					"Weight": 1,
+					"QuestionText": "{{i18n:Emily.Bertending01_Question}}", //Can I have another one on the bar?
+					"AnswerText": "{{Emily.Bertending01_Answer}}",
+					"CanRepeatQuestion": true,
+					"FriendshipModifier": "{{Emily.Bertending01_FriendshipModifier}}"
+				}
+			}
+		}
+	]
+}

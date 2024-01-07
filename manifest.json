@@ -1,0 +1,21 @@
+{
+    "$schema": "https://smapi.io/schemas/manifest.json",
+    "Name": "Quips And Questions",
+    "Author": "ItsBenter",
+    "Description": "Add questions and remarks for farmer to initiate.",
+    "Version": "1.0.0",
+    "MinimumApiVersion": "4.0.0-alpha",
+    "UniqueID": "ItsBenter.QuipsAndQuestions",
+    "UpdateKeys": [
+        "Nexus:????"
+    ],
+    "ContentPackFor": {
+        "UniqueID": "Pathoschild.ContentPatcher"
+    },
+    "Dependencies": [
+        {
+            "UniqueID": "spacechase0.SpaceCore",
+            "IsRequired": true
+        }
+    ]
+}

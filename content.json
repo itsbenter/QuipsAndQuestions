@@ -1,0 +1,189 @@
+{
+	"$schema": "https://smapi.io/schemas/content-patcher.json",
+	"Format": "2.0.0",
+	"DynamicTokens": [
+		//Shane.JojaMart00_Question
+		//How do you like your job?
+		//Can't use portrait because no Joja portrait for Shane, can add one but it'll be shitty for compatibility.
+		{
+			"Name": "Shane.JojaMart00_Answer",
+			"Value": "{{i18n:Shane.JojaMart00_Answer{{Random:00,01}}}}#$action AddFriendshipPoints Shane -15",
+			//00: %Shane's hard at work, but he looks menacingly at you. 
+			//01: %Shane mumbles 'I love it'. You are probably imagining things.
+		},
+		{
+			"Name": "Shane.JojaMart00_Answer",
+			"Value": "{{i18n:Shane.JojaMart00_Answer{{Random:02,03}}}}",
+			//02: %Shane mumbles 'Not today...' 
+			//03: %Shane looks kinda pissed
+			"When": {
+				"query: {{Hearts:Shane}} >= 4": true
+			}
+		},
+		{
+			"Name": "Shane.JojaMart00_Answer",
+			"Value": "{{i18n:Shane.JojaMart00_Answer{{Random:04,05}}}}",
+			//04: %Shane mumbles 'You know how it is...'. He seems glad seeing you.
+			//05: %Shane keeps working, but you can see a faint smile.
+			"When": {
+				"query: {{Hearts:Shane}} >= 8": true
+			}
+		},
+		//Sam.Band01_Question
+		//Are you going to have a concert soon?
+		{
+			"Name": "Sam.Band01_Answer",
+			"Value": "{{i18n:Sam.Band01_Answer{{Random:00,01}}}}#$action AddFriendshipPoints Sam 10",
+			//00: Hey, looking for some good time, huh? I definitely like to have one...  $1
+			//01: Well, you'll be among the first to know @. *wink* $1
+		},
+		{
+			"Name": "Sam.Band01_Answer",
+			"Value": "{{i18n:Sam.Band01_Answer{{Random:02,03}}}}#$action AddFriendshipPoints Sam -10",
+			//02: Good thing takes time, you can't rush it.
+			//03: Quite a persistent one, aren't you @?#$b#I guess I like the energy.
+			"When": {
+				"HasConversationTopic |contains: {{ModId}}_Sam.Band01_Recent": true,
+			}
+		},
+		//Gus.Saloon00_Question
+		//Is the Saloon doing well?
+		{
+			"Name": "Gus.Saloon00_Answer",
+			"Value": "{{i18n:Gus.Saloon00_Answer{{Random:00,01,02,03}}}}#$action AddFriendshipPoints Gus 5#",
+			//00: Oh @, it's going...#$b#Thank you for asking.
+			//01: Steady and steady. Business is going well.
+			//02: It's picking up, especially on Friday night. $1
+			//03: We've had some busy nights lately.#$b#It's good for business. $1
+		},
+		{
+			"Name": "Gus.Saloon00_Answer",
+			"Value": "{{i18n:Gus.Saloon00_Answer{{Random:04,05,06}}}}#$action AddFriendshipPoints Gus 5",
+			//04: Friday night is always good for business 
+			//05: It's worth it to see all the faces that come here. $1#$b#And yes, Stardrop Saloon is doing well.
+			//06: I always look forward to seeing the crowd on Friday night. It's our busiest time $1
+			"When": {
+				"DayOfWeek": "Fri"
+			}
+		},
+		{
+			"Name": "Gus.Saloon00_Answer",
+			"Value": "{{i18n:Gus.Saloon00_Answer{{Random:07,08}}}}#$action AddFriendshipPoints Gus -5",
+			//07: I appreciate your concern @. I can assure you the Saloon is here to stay.
+			//08: Felt like you asked about this already. $1#$b#We're doing fine.
+			"When": {
+				"HasConversationTopic |contains: {{ModId}}_Gus.Saloon00_Recent": true,
+			}
+		},
+		//Gus.Bertending00_Question
+		//Can I have a free drink?
+		{
+			"Name": "Gus.Bertending00_Answer",
+			"Value": "{{i18n:Gus.Bertending00_Answer{{Random:00,01}}}}#$action AddFriendshipPoints Gus -15#",
+			//00: Sorry, but I don't offer free drinks.
+			//01: We don't give away free drinks, you'll need to pay for that.
+		},
+		{
+			"Name": "Gus.Bertending00_Answer",
+			"Value": "{{i18n:Gus.Bertending00_Answer{{Random:02,03,04,05,09}}}}#$action AddFriendshipPoints Gus -5#",
+			//02: I enjoy having you here @, but I can't offer free drinks.
+			//03: Appreciate you coming here, but I should refuse my friend.
+			//04: Hate to disappoint @, but for now the drinks are on the tab.
+			//05: It's great to see you, but drinks are on the standard price.
+			//09: While it's great having you here, I think you should keep in mind this is a business establishment.
+			"When": {
+				"query: {{Hearts:Gus}} >= 2": true
+			}
+		},
+		{
+			"Name": "Gus.Bertending00_Answer",
+			"Value": "{{i18n:Gus.Bertending00_Answer{{Random:02,03,04,05,06,07,08}}}}#$action AddFriendshipPoints Gus -5#",
+			//06: I could spare one on the house. Here, drink it slowly. $1 #$action AddItem (O)346
+			//07: Consider it on the house, my friend. #$b#Enjoy your drink! $1 #$action AddItem (O)303
+			//08: No charge for this one. Enjoy responsibly! $1 #$action AddItem (O)459
+			"When": {
+				"HasSeenEvent |Contains: 96": true, //Event where Pam paid her tab
+				"query: {{Hearts:Gus}} >= 4": true
+			}
+		},
+		{
+			"Name": "Gus.Bertending00_Answer",
+			"Value": "{{i18n:Gus.Bertending00_Answer{{Random:02,03,04,05,09}}}}#$action AddFriendshipPoints Gus -10#",
+			"When": {
+				"HasConversationTopic |contains: {{ModId}}_Gus.Bartending00_Recent": true,
+			}
+		},
+		{
+			"Name": "Gus.Bertending00_Answer",
+			"Value": "{{i18n:Gus.Bertending00_Answer{{Random:10,11}}}}#$action AddFriendshipPoints Gus -10#",
+			//10: Didn't you just ask one from Emily?
+			//11: I'm not fond of what you're doing here @.
+			"When": {
+				"HasConversationTopic |contains: {{ModId}}_Emily.Bartending00_AskedToday": true,
+			}
+		},
+		//Emily.Bertending00_Question
+		//Can I have a free drink?
+		{
+			"Name": "Emily.Bertending00_Answer",
+			"Value": "{{i18n:Emily.Bertending00_Answer{{Random:00,01,02}}}}#$action AddFriendshipPoints Emily -10#",
+			//00: Stardrop Saloon is a business establishment after all. I'm sorry @. $2
+			//01: It'll be very inconsiderate for me to do that. $2
+			//02: I'm afraid I can't give you a free drink.
+		},
+		{
+			"Name": "Emily.Bertending00_Answer",
+			"Value": "{{i18n:Emily.Bertending00_Answer{{Random:03,04}}}}",
+			//03: I'd like you to have a good time here, but I can't offer free drinks.
+			//04: Even for friends, I can't give out free drinks @.
+			"When": {
+				"query: {{Hearts:Emily}} >= 4": true
+			}
+		},
+		{
+			"Name": "Emily.Bertending00_Answer",
+			"Value": "{{i18n:Emily.Bertending00_Answer{{Random:03,04,05,06}}}}",
+			//05: Okay, this one's on me.#$b#I've been getting some good tips. #$action AddItem (O)346
+			//06: This one's my treat. Enjoy your drink! $1 #$action AddItem (O)873
+			"When": {
+				"query: {{Hearts:Emily}} >= 6": true
+			}
+		},
+		{
+			"Name": "Emily.Bertending00_Answer",
+			"Value": "{{i18n:Emily.Bertending00_Answer{{Random:07,08}}}}#$action AddFriendshipPoints Emily -15#",
+			//07: Let's not make asking for free drink a habit, shall we? $2
+			//08: Uhm, are you sure you really can't afford our drinks? $2#$b#I'm just concerned. $2
+			"When": {
+				"HasConversationTopic |contains: {{ModId}}_Emily.Bartending00_Recent": true,
+			}
+		},
+		{
+			"Name": "Emily.Bertending00_Answer",
+			"Value": "{{i18n:Emily.Bertending00_Answer{{Random:09,10}}}}#$action AddFriendshipPoints Emily -15#",
+			//09: Do I just imagine it, or did you just asked Gus? $2 #$b#This is not nice @. $2
+			//10: No, I 
+			"When": {
+				"HasConversationTopic |contains: {{ModId}}_Gus.Bartending00_AskedToday": true,
+			}
+		},
+		//Really? After asking for free drink just not too long ago? You're a funny one @. $1 
+		//Can I get you a drink
+	],
+	"Changes": [
+		{
+			"Action": "Include",
+			"FromFile": "Questions/Regular.json",
+			"When": {
+				"HasValue:{{DayEvent}}": false
+			}
+		},
+		{
+			"Action": "Include",
+			"FromFile": "Questions/Festival.json",
+			"When": {
+				"HasValue:{{DayEvent}}": true
+			}
+		}
+	]
+}
