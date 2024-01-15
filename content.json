@@ -75,17 +75,17 @@
 				"HasConversationTopic |contains: {{ModId}}_Gus.Saloon00_Recent": true,
 			}
 		},
-		//Gus.Bertending00_Question
+		//Gus.Bartending00_Question
 		//Can I have a free drink?
 		{
-			"Name": "Gus.Bertending00_Answer",
-			"Value": "{{i18n:Gus.Bertending00_Answer{{Random:00,01}}}}#$action AddFriendshipPoints Gus -15#",
+			"Name": "Gus.Bartending00_Answer",
+			"Value": "{{i18n:Gus.Bartending00_Answer{{Random:00,01}}}}#$action AddFriendshipPoints Gus -15#",
 			//00: Sorry, but I don't offer free drinks.
 			//01: We don't give away free drinks, you'll need to pay for that.
 		},
 		{
-			"Name": "Gus.Bertending00_Answer",
-			"Value": "{{i18n:Gus.Bertending00_Answer{{Random:02,03,04,05,09}}}}#$action AddFriendshipPoints Gus -5#",
+			"Name": "Gus.Bartending00_Answer",
+			"Value": "{{i18n:Gus.Bartending00_Answer{{Random:02,03,04,05,09}}}}#$action AddFriendshipPoints Gus -5#",
 			//02: I enjoy having you here @, but I can't offer free drinks.
 			//03: Appreciate you coming here, but I should refuse my friend.
 			//04: Hate to disappoint @, but for now the drinks are on the tab.
@@ -96,8 +96,8 @@
 			}
 		},
 		{
-			"Name": "Gus.Bertending00_Answer",
-			"Value": "{{i18n:Gus.Bertending00_Answer{{Random:02,03,04,05,06,07,08}}}}#$action AddFriendshipPoints Gus -5#",
+			"Name": "Gus.Bartending00_Answer",
+			"Value": "{{i18n:Gus.Bartending00_Answer{{Random:02,03,04,05,06,07,08}}}}#$action AddFriendshipPoints Gus -5#",
 			//06: I could spare one on the house. Here, drink it slowly. $1 #$action AddItem (O)346
 			//07: Consider it on the house, my friend. #$b#Enjoy your drink! $1 #$action AddItem (O)303
 			//08: No charge for this one. Enjoy responsibly! $1 #$action AddItem (O)459
@@ -107,33 +107,33 @@
 			}
 		},
 		{
-			"Name": "Gus.Bertending00_Answer",
-			"Value": "{{i18n:Gus.Bertending00_Answer{{Random:02,03,04,05,09}}}}#$action AddFriendshipPoints Gus -10#",
+			"Name": "Gus.Bartending00_Answer",
+			"Value": "{{i18n:Gus.Bartending00_Answer{{Random:02,03,04,05,09}}}}#$action AddFriendshipPoints Gus -10#",
 			"When": {
 				"HasConversationTopic |contains: {{ModId}}_Gus.Bartending00_Recent": true,
 			}
 		},
 		{
-			"Name": "Gus.Bertending00_Answer",
-			"Value": "{{i18n:Gus.Bertending00_Answer{{Random:10,11}}}}#$action AddFriendshipPoints Gus -10#",
+			"Name": "Gus.Bartending00_Answer",
+			"Value": "{{i18n:Gus.Bartending00_Answer{{Random:10,11}}}}#$action AddFriendshipPoints Gus -10#",
 			//10: Didn't you just ask one from Emily?
 			//11: I'm not fond of what you're doing here @.
 			"When": {
 				"HasConversationTopic |contains: {{ModId}}_Emily.Bartending00_AskedToday": true,
 			}
 		},
-		//Emily.Bertending00_Question
+		//Emily.Bartending00_Question
 		//Can I have a free drink?
 		{
-			"Name": "Emily.Bertending00_Answer",
-			"Value": "{{i18n:Emily.Bertending00_Answer{{Random:00,01,02}}}}#$action AddFriendshipPoints Emily -10#",
+			"Name": "Emily.Bartending00_Answer",
+			"Value": "{{i18n:Emily.Bartending00_Answer{{Random:00,01,02}}}}#$action AddFriendshipPoints Emily -10#",
 			//00: Stardrop Saloon is a business establishment after all. I'm sorry @. $2
 			//01: It'll be very inconsiderate for me to do that. $2
 			//02: I'm afraid I can't give you a free drink.
 		},
 		{
-			"Name": "Emily.Bertending00_Answer",
-			"Value": "{{i18n:Emily.Bertending00_Answer{{Random:03,04}}}}",
+			"Name": "Emily.Bartending00_Answer",
+			"Value": "{{i18n:Emily.Bartending00_Answer{{Random:03,04}}}}",
 			//03: I'd like you to have a good time here, but I can't offer free drinks.
 			//04: Even for friends, I can't give out free drinks @.
 			"When": {
@@ -141,8 +141,8 @@
 			}
 		},
 		{
-			"Name": "Emily.Bertending00_Answer",
-			"Value": "{{i18n:Emily.Bertending00_Answer{{Random:03,04,05,06}}}}",
+			"Name": "Emily.Bartending00_Answer",
+			"Value": "{{i18n:Emily.Bartending00_Answer{{Random:03,04,05,06}}}}",
 			//05: Okay, this one's on me.#$b#I've been getting some good tips. #$action AddItem (O)346
 			//06: This one's my treat. Enjoy your drink! $1 #$action AddItem (O)873
 			"When": {
@@ -150,8 +150,8 @@
 			}
 		},
 		{
-			"Name": "Emily.Bertending00_Answer",
-			"Value": "{{i18n:Emily.Bertending00_Answer{{Random:07,08}}}}#$action AddFriendshipPoints Emily -15#",
+			"Name": "Emily.Bartending00_Answer",
+			"Value": "{{i18n:Emily.Bartending00_Answer{{Random:07,08}}}}#$action AddFriendshipPoints Emily -15#",
 			//07: Let's not make asking for free drink a habit, shall we? $2
 			//08: Uhm, are you sure you really can't afford our drinks? $2#$b#I'm just concerned. $2
 			"When": {
@@ -159,8 +159,8 @@
 			}
 		},
 		{
-			"Name": "Emily.Bertending00_Answer",
-			"Value": "{{i18n:Emily.Bertending00_Answer{{Random:09,10}}}}#$action AddFriendshipPoints Emily -15#",
+			"Name": "Emily.Bartending00_Answer",
+			"Value": "{{i18n:Emily.Bartending00_Answer{{Random:09,10}}}}#$action AddFriendshipPoints Emily -15#",
 			//09: Do I just imagine it, or did you just asked Gus? $2 #$b#This is not nice @. $2
 			//10: No, I 
 			"When": {

@@ -40,7 +40,7 @@
 					"Condition": "PLAYER_HAS_SEEN_EVENT Current 4081148", //Event where Sam's band performs
 					"Weight": 1,
 					"QuestionText": "{{i18n:Sam.Band01_Question}", //Are you going to have concert soon?
-					"AnswerText": "{{Sam.Band01_Answer}}#$action AddConversationTopic {{ModId}}_Sam.Band01_Recent 3",
+					"AnswerText": "{{Sam.Band01_Answer}}#$t {{ModId}}_Sam.Band01_Recent 3",
 					"CanRepeatQuestion": true,
 					"FriendshipModifier": "0"
 				},
@@ -58,16 +58,16 @@
 					"Condition": "PLAYER_HAS_SEEN_EVENT Current 96", //Event where Gus express concern over Saloon finance
 					"Weight": 1,
 					"QuestionText": "{{i18n:Gus.Saloon00_Question}}", //Is the saloon doing well?
-					"AnswerText": "{{Gus.Saloon00_Answer}}#$action AddConversationTopic {{ModId}}_Gus.Saloon00_Recent 3",
+					"AnswerText": "{{Gus.Saloon00_Answer}}#$t {{ModId}}_Gus.Saloon00_Recent 3",
 					"CanRepeatQuestion": true,
 					"FriendshipModifier": 0
 				},
-				"{{ModID}}_Gus.Bertending00": {
-					"ID": "{{ModID}}_Gus.Bertending00",
+				"{{ModID}}_Gus.Bartending00": {
+					"ID": "{{ModID}}_Gus.Bartending00",
 					"Condition": "PLAYER_LOCATION Current Saloon", //Gus tending the bar
 					"Weight": 1,
-					"QuestionText": "{{i18n:Gus.Bertending00_Question}}", //Can I have a free drink?
-					"AnswerText": "{{Gus.Bertending00_Answer}}#$action AddConversationTopic {{ModId}}_Gus.Bertending00_AskedToday 0#$action AddConversationTopic {{ModId}}Gus.Bertending00_Recent 3",
+					"QuestionText": "{{i18n:Gus.Bartending00_Question}}", //Can I have a free drink?
+					"AnswerText": "{{Gus.Bartending00_Answer}}#$t {{ModId}}_Gus.Bartending00_AskedToday 0#$t {{ModId}}Gus.Bartending00_Recent 3",
 					"CanRepeatQuestion": true,
 					"FriendshipModifier": 0
 				},
@@ -80,12 +80,12 @@
 				"Emily"
 			],
 			"Entries": {
-				"{{ModID}}_Emily.Bertending00": {
-					"ID": "{{ModID}}_Emily.Bertending00",
+				"{{ModID}}_Emily.Bartending00": {
+					"ID": "{{ModID}}_Emily.Bartending00",
 					"Condition": "PLAYER_LOCATION Current Saloon", //Emily tending the bar
 					"Weight": 1,
-					"QuestionText": "{{i18n:Emily.Bertending00_Question}}", //Can I have a free drink?
-					"AnswerText": "{{Emily.Bertending00_Answer}}#$action AddConversationTopic {{ModId}}_Emily.Bertending00_AskedToday 0#$action AddConversationTopic {{ModId}}_Emily.Bertending00_Recent 3",
+					"QuestionText": "{{i18n:Emily.Bartending00_Question}}", //Can I have a free drink?
+					"AnswerText": "{{Emily.Bartending00_Answer}}#$t {{ModId}}_Emily.Bartending00_AskedToday 0#$t {{ModId}}_Emily.Bartending00_Recent 3",
 					"CanRepeatQuestion": true,
 					"FriendshipModifier": 0
 				}
@@ -99,17 +99,17 @@
 			],
 			"When": {
 				"LocationName": "Saloon",
-				"HasConversationTopic |Contains={{ModID}}_Emily.Bertending01_GivenFreeDrink": true
+				"HasConversationTopic |Contains={{ModID}}_Emily.Bartending01_GivenFreeDrink": true
 			},
 			"Update": "OnLocationChange",
 			"Entries": {
-				"{{ModID}}_Emily.Bertending01": {
-					"ID": "{{ModID}}_Emily.Bertending01",
+				"{{ModID}}_Emily.Bartending01": {
+					"ID": "{{ModID}}_Emily.Bartending01",
 					"Weight": 1,
-					"QuestionText": "{{i18n:Emily.Bertending01_Question}}", //Can I have another one on the bar?
-					"AnswerText": "{{Emily.Bertending01_Answer}}",
+					"QuestionText": "{{i18n:Emily.Bartending01_Question}}", //Can I have another one on the bar?
+					"AnswerText": "{{Emily.Bartending01_Answer}}",
 					"CanRepeatQuestion": true,
-					"FriendshipModifier": "{{Emily.Bertending01_FriendshipModifier}}"
+					"FriendshipModifier": "{{Emily.Bartending01_FriendshipModifier}}"
 				}
 			}
 		}
